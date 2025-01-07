@@ -17,6 +17,7 @@ export const Root = () => <>
     <NavLink to='/'>Главная</NavLink>
     <NavLink to='posts'>Посты</NavLink>
     <NavLink to='blog'>Блог</NavLink>
+    <NavLink to='feedback'>Обратная связь</NavLink>
     <br />
     <br />
     <br />
