@@ -6,6 +6,7 @@ import { Main } from './pages/main'
 import { Feedback } from './pages/feedback'
 import { Post } from './pages/posts/post'
 import { BlogElement } from './pages/blog/blogElement'
+import { Error } from './pages/error'
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     {
       path: '/',
       element: <Root />,
+      errorElement: <Error />,
       children: [
         {
           index: true,
