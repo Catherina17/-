@@ -7,8 +7,11 @@ import { Feedback } from './pages/feedback'
 import { Post } from './pages/posts/post'
 import { BlogElement } from './pages/blog/blogElement'
 import { Error } from './pages/error'
-import './App.css';
 import { AuthProvider } from './context/AuthContext'
+import { Login } from './pages/login'
+import { Protected } from './pages/protected'
+import { CheckAuth } from './components/checkAuth'
+import './App.css';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,10 +43,20 @@ function App() {
         {
           path: 'feedback',
           element: <Feedback />
+        },
+        {
+          path: '/protected',
+          element: <CheckAuth>
+            <Protected />
+          </CheckAuth>
         }
-      ]
+      ],
     },
-  ])
+    {
+      path: '/login',
+      element: <Login />
+    }
+  ]);
 
   return (
     <AuthProvider>
