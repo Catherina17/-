@@ -8,6 +8,7 @@ import { Post } from './pages/posts/post'
 import { BlogElement } from './pages/blog/blogElement'
 import { Error } from './pages/error'
 import './App.css';
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
   const router = createBrowserRouter([
@@ -45,9 +46,11 @@ function App() {
   ])
 
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </AuthProvider>
   );
 }
 
