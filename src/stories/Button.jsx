@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './button.css';
 
 /** Primary UI component for user interaction */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button = ({ primary, backgroundColor, size, label, title, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
@@ -14,6 +14,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
+      {title && <strong>{title}</strong>}
       {label}
     </button>
   );
@@ -28,6 +29,8 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** Button contents */
   label: PropTypes.string.isRequired,
+
+  title: PropTypes.string,
   /** Optional click handler */
   onClick: PropTypes.func,
 
@@ -42,4 +45,5 @@ Button.defaultProps = {
   primary: false,
   size: 'medium',
   onClick: undefined,
+  title: 'Кнопка -'
 };
