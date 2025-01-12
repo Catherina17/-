@@ -8,14 +8,18 @@ export const AuthProvider = ({ children }) => {
     const signIn = (newUser, callback) => {
         setUser(newUser)
         setTimeout(() => {
-            callback()
+            if (callback) {
+                callback()
+            }
         }, 300)
     }
 
     const signOut = (callback) => {
         setUser(null)
         setTimeout(() => {
-            callback()
+            if (callback) {
+                callback()
+            }
         }, 300)
     }
 

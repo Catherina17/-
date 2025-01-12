@@ -16,7 +16,7 @@ export const User = () => {
         <br />
         <button
             onClick={() => {
-                auth.signOut(() => navigate('/'));
+                auth.signOut(() => navigate('/login'));
             }}
         >
             Выход
