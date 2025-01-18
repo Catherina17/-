@@ -10,6 +10,8 @@ export const AuthProvider = ({ children }) => {
         setTimeout(() => {
             if (callback) {
                 callback()
+            } else {
+                alert('Ошибка: Коллбэк для signIn не передан!')
             }
         }, 300)
     }
@@ -19,6 +21,8 @@ export const AuthProvider = ({ children }) => {
         setTimeout(() => {
             if (callback) {
                 callback()
+            } else {
+                alert('Ошибка: Коллбэк для signOut не передан!')
             }
         }, 300)
     }
